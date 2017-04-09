@@ -207,7 +207,7 @@ class LMSCallbackServer(Thread):
         """
         Login
         """
-        result = self.request("login %s %s" % (self.username, self.password))
+        result = self.__request("login %s %s" % (self.username, self.password))
         self.logged_in = (result == "******")
         if not self.logged_in:
             raise CallbackServerError("Unable to login. Check username and "

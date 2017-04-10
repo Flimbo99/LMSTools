@@ -394,7 +394,7 @@ class LMSCallbackServer(Thread):
             try:
                 self.__connect()
                 self.connected = True
-                self.__check_event(CallbackServer.SERVER_CONNECT)
+                self.__check_event(LMSCallbackServer.SERVER_CONNECT)
                 break
             except CallbackServerError:
                 raise
@@ -426,7 +426,7 @@ class LMSCallbackServer(Thread):
 
             # Server is unavailable so exit gracefully
             except EOFError:
-                self.__check_event(CallbackServer.SERVER_ERROR)
+                self.__check_event(LMSCallbackServer.SERVER_ERROR)
                 self.run()
 
         self.__disconnect()
